@@ -1,8 +1,11 @@
 asgiref==3.6.0
 backports.zoneinfo==0.2.1
 Django==4.1.4
+django-phonenumber-field==7.0.1
+django-phonenumbers==1.0.1
 djangorestframework==3.14.0
 djangorestframework-simplejwt==5.2.2
+phonenumbers==8.13.2
 Pillow==9.3.0
 PyJWT==2.6.0
 pytz==2022.7
