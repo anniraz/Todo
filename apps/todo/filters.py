@@ -8,7 +8,8 @@ class CharFilterInFilter(filters.BaseInFilter,filters.CharFilter):
 
 class  TodoFilter(filters.FilterSet):
     title=CharFilterInFilter(field_name='title',lookup_expr='in')
-
+    is_completed=CharFilterInFilter(field_name='is_completed',lookup_expr='in')
+    
     class Meta:
         model=Todo
-        fields=['title']
+        fields=['title','is_completed']

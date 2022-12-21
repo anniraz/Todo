@@ -16,13 +16,15 @@ class TodoCreateApiView(generics.CreateAPIView):
         return serializer.save(user=self.request.user)
 
 
-
 class TodoListApiView(generics.ListAPIView):
     queryset=Todo.objects.all()
     serializer_class=TodoSerializers
-    permission_classes=[IsOwner]
+    permission_classes=[permissions.IsAuthenticated]
     filterset_class=TodoFilter
     filter_backends=(DjangoFilterBackend,filters.OrderingFilter)
+
+    def get_queryset(self):
+        return Todo.objects.filter(user=self.request.user)
 
 
 class TodoDetailApiView(generics.RetrieveUpdateDestroyAPIView):
