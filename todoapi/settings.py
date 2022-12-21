@@ -31,6 +31,8 @@ INSTALLED_APPS = [
     'rest_framework',
     "rest_framework_simplejwt",
     "phonenumber_field",
+    'django_filters',
+
     # apps
     'apps.user',
     'apps.todo'
